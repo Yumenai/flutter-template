@@ -18,6 +18,9 @@ dependencies:
   # Provide iOS Cupertino style icons.
   cupertino_icons: ^1.0.6
 
+  # Provide state management
+  provider: ^6.1.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -30,3 +33,7 @@ flutter:
 
   # Provide Android Material Design style.
   uses-material-design: true
+
+  # Declare Multimedia Resources
+  assets:
+    - assets/image/
