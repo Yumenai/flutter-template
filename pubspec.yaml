@@ -1,0 +1,32 @@
+name: template
+description: "A template that provides all the basic setup for a Flutter application."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# Android : Version Name               + Version Code
+# iOS     : CFBundleShortVersionString + CFBundleVersion
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # Provide iOS Cupertino style icons.
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Provide a set of recommended lints to encourage good coding practices.
+  flutter_lints: ^3.0.0
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # Provide Android Material Design style.
+  uses-material-design: true
