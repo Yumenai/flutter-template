@@ -24,6 +24,9 @@ dependencies:
   # Provide application information
   package_info_plus: ^8.1.1
 
+  # Provide SVG image support
+  flutter_svg: ^2.0.16
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -41,4 +44,5 @@ flutter:
 
   # Declare Multimedia Resources
   assets:
+    - assets/icons/
     - assets/images/

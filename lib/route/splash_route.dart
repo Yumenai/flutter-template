@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../service/route_service.dart';
 import '../ui/screen/loading_screen_ui.dart';
+import 'login_route.dart';
 
 class SplashRoute {
   const SplashRoute();
@@ -15,7 +16,7 @@ class SplashRoute {
       onInitialise: (context) async {
         await Future.delayed(const Duration(seconds: 2));
 
-        // To Something
+        LoginRoute().start();
       },
     );
   }

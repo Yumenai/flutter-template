@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../data/asset/icon_asset_data.dart';
 import '../data/asset/image_asset_data.dart';
+import '../data/color_data.dart';
 
 class ResourceManager with ChangeNotifier {
   static ResourceManager of(final BuildContext context) {
@@ -10,6 +11,9 @@ class ResourceManager with ChangeNotifier {
   }
 
   ResourceManager();
+
+  ColorData _color = const ColorData.light();
+  ColorData get color => _color;
 
   IconAssetData _icon = const IconAssetData.light();
   IconAssetData get icon => _icon;
@@ -40,9 +44,11 @@ class ResourceManager with ChangeNotifier {
 
   void updateBrightness(final Brightness brightness) {
     if (brightness == Brightness.dark) {
+      _color = const ColorData.dark();
       _icon = const IconAssetData.dark();
       _image = const ImageAssetData.dark();
     } else {
+      _color = const ColorData.light();
       _icon = const IconAssetData.light();
       _image = const ImageAssetData.light();
     }
@@ -53,6 +59,8 @@ class ResourceManager with ChangeNotifier {
 
 extension ResourceManagerExtension on BuildContext {
   ThemeMode get themeMode => ResourceManager.of(this).themeMode;
+
+  ColorData get color => ResourceManager.of(this).color;
 
   IconAssetData get icon => ResourceManager.of(this).icon;
 

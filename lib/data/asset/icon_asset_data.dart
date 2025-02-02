@@ -1,5 +1,17 @@
-class IconAssetData {
-  const IconAssetData.dark();
+const _basePath = 'assets/icons';
 
-  const IconAssetData.light();
+class IconAssetData {
+  final String apple;
+  final String facebook;
+  final String google;
+
+  const IconAssetData.dark()
+      : apple = '$_basePath/apple.svg',
+        facebook = '$_basePath/facebook.svg',
+        google = '$_basePath/google.svg';
+
+  const IconAssetData.light()
+      : apple = '$_basePath/apple.svg',
+        facebook = '$_basePath/facebook.svg',
+        google = '$_basePath/google.svg';
 }
