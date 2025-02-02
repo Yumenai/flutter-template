@@ -25,7 +25,7 @@ class IconButtonComponentUi extends StatelessWidget {
     this.foregroundColor,
     this.backgroundColor,
     this.size = ImageButtonSize.large,
-    this.shape = IconButtonShape.square,
+    this.shape = IconButtonShape.circle,
     this.style = IconButtonStyle.basic,
   });
 
@@ -66,6 +66,16 @@ class IconButtonComponentUi extends StatelessWidget {
     }
   }
 
+  Widget _buildIcon(final BuildContext context) {
+    return IconTheme(
+      data: Theme.of(context).iconTheme.copyWith(
+        size: 24,
+        color: foregroundColor,
+      ),
+      child: icon,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final Widget component;
@@ -81,8 +91,7 @@ class IconButtonComponentUi extends StatelessWidget {
             foregroundColor: foregroundColor,
             backgroundColor: backgroundColor,
           ),
-
-          child: icon,
+          child: _buildIcon(context),
         );
       case IconButtonStyle.outlined:
         component = TextButton(
@@ -96,7 +105,7 @@ class IconButtonComponentUi extends StatelessWidget {
             foregroundColor: foregroundColor,
             backgroundColor: backgroundColor,
           ),
-          child: icon,
+          child: _buildIcon(context),
         );
       case IconButtonStyle.elevated:
         component = ElevatedButton(
@@ -108,7 +117,7 @@ class IconButtonComponentUi extends StatelessWidget {
             padding: EdgeInsets.zero,
             shape: _buildShape(),
           ),
-          child: icon,
+          child: _buildIcon(context),
         );
     }
 

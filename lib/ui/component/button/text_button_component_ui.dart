@@ -80,16 +80,22 @@ class TextButtonComponentUi extends StatelessWidget {
     }
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(final BuildContext context) {
     if (leading == null && trailing == null) {
       return text;
     }
 
     return Row(
       children: [
-        SizedBox.square(
-          dimension: 24,
-          child: leading,
+        IconTheme(
+          data: Theme.of(context).iconTheme.copyWith(
+            size: 24,
+            color: foregroundColor,
+          ),
+          child: SizedBox.square(
+            dimension: 24,
+            child: leading,
+          ),
         ),
         const SizedBox(width: 12),
         Expanded(
@@ -124,7 +130,7 @@ class TextButtonComponentUi extends StatelessWidget {
             foregroundColor: foregroundColor,
             backgroundColor: backgroundColor,
           ),
-          child: _buildContent(),
+          child: _buildContent(context),
         );
       case TextButtonStyle.outlined:
         component = TextButton(
@@ -135,7 +141,7 @@ class TextButtonComponentUi extends StatelessWidget {
               borderColor: foregroundColor ?? Theme.of(context).colorScheme.primary,
             ),
           ),
-          child: _buildContent(),
+          child: _buildContent(context),
         );
       case TextButtonStyle.elevated:
         component = ElevatedButton(
@@ -147,7 +153,7 @@ class TextButtonComponentUi extends StatelessWidget {
             shape: _buildShape(),
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
-          child: _buildContent(),
+          child: _buildContent(context),
         );
     }
 

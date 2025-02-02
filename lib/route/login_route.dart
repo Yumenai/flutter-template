@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../manager/repository_manager.dart';
 import '../service/route_service.dart';
 import '../ui/dialog/message_dialog_ui.dart';
 import '../ui/screen/landing_screen_ui.dart';
@@ -52,6 +53,7 @@ class LoginRoute {
         });
       },
       onUpdatePhoneCode: (context) async {
+        // TODO retrieve phone code
         return null;
       },
     ).nextScreen();
@@ -59,20 +61,33 @@ class LoginRoute {
 
   void _loginApple(final BuildContext context) {
     MessageDialogUi.comingSoon().show(context);
+
+    _reinitialisation(context);
   }
 
   void _loginGoogle(final BuildContext context) {
     MessageDialogUi.comingSoon().show(context);
+
+    _reinitialisation(context);
   }
 
   void _loginFacebook(final BuildContext context) {
     MessageDialogUi.comingSoon().show(context);
+
+    _reinitialisation(context);
   }
 
   Future<bool> _verifyPin(final BuildContext context, final String pin) async {
     MessageDialogUi.comingSoon().show(context);
 
-    SplashRoute().start();
+    _reinitialisation(context);
     return true;
+  }
+
+  void _reinitialisation(final BuildContext context) {
+    // TODO call api to retrieve access token
+    context.repository.configuration.setAccessToken(UniqueKey().toString());
+
+    SplashRoute().start();
   }
 }

@@ -27,6 +27,9 @@ dependencies:
   # Provide SVG image support
   flutter_svg: ^2.0.16
 
+  # Provide key value storage
+  shared_preferences: ^2.3.5
+
   photo_view: ^0.15.0
 
   image_picker: ^1.1.2

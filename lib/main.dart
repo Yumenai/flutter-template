@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:template/route/splash_route.dart';
 
+import 'manager/repository_manager.dart';
 import 'manager/resource_manager.dart';
+import 'route/splash_route.dart';
+import 'service/data_storage_service.dart';
 import 'service/info_service.dart';
 import 'service/route_service.dart';
 
@@ -10,6 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await InfoService.initialise();
+  await DataStorageService.initialise();
 
   runApp(
     MultiProvider(
@@ -17,6 +20,11 @@ void main() async {
         ChangeNotifierProvider(
           create: (context) {
             return ResourceManager();
+          },
+        ),
+        Provider(
+          create: (context) {
+            return RepositoryManager();
           },
         ),
       ],

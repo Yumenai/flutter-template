@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../manager/repository_manager.dart';
 import '../service/route_service.dart';
 import '../ui/screen/loading_screen_ui.dart';
+import 'dashboard_route.dart';
 import 'login_route.dart';
 
 class SplashRoute {
@@ -16,7 +18,13 @@ class SplashRoute {
       onInitialise: (context) async {
         await Future.delayed(const Duration(seconds: 2));
 
-        LoginRoute().start();
+        if (!context.mounted) return;
+
+        if (context.repository.configuration.hasAccessToken) {
+          DashboardRoute().start();
+        } else {
+          LoginRoute().start();
+        }
       },
     );
   }
