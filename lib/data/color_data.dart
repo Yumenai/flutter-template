@@ -1,26 +1,38 @@
 import 'package:flutter/material.dart';
 
 class ColorData {
-  final Color appleForeground;
-  final Color appleBackground;
-  final Color facebookForeground;
-  final Color facebookBackground;
-  final Color googleForeground;
-  final Color googleBackground;
+  final Color apple;
+  final Color onApple;
+  final Color facebook;
+  final Color onFacebook;
+  final Color google;
+  final Color onGoogle;
+  final Color negative;
+  final Color onNegative;
+  final Color positive;
+  final Color onPositive;
 
   const ColorData.dark()
-      : appleForeground = Colors.white,
-        appleBackground = Colors.black,
-        facebookForeground = Colors.white,
-        facebookBackground = const Color(0xFF4267B2),
-        googleForeground = Colors.black,
-        googleBackground = Colors.white;
+      : apple = Colors.black,
+        onApple = Colors.white,
+        facebook = const Color(0xFF4267B2),
+        onFacebook = Colors.white,
+        google = Colors.white,
+        onGoogle = Colors.black,
+        negative = const Color(0xFFB71C1C),
+        onNegative = Colors.white,
+        positive = const Color(0xFF33691E),
+        onPositive = Colors.white;
 
   const ColorData.light()
-      : appleForeground = Colors.white,
-        appleBackground = Colors.black,
-        facebookForeground = Colors.white,
-        facebookBackground = const Color(0xFF4267B2),
-        googleForeground = Colors.black,
-        googleBackground = Colors.white;
+      : apple = Colors.black,
+        onApple = Colors.white,
+        facebook = const Color(0xFF4267B2),
+        onFacebook = Colors.white,
+        google = Colors.white,
+        onGoogle = Colors.black,
+        negative = const Color(0xFFB71C1C),
+        onNegative = Colors.white,
+        positive = const Color(0xFF33691E),
+        onPositive = Colors.white;
 }

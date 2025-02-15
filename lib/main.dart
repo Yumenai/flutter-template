@@ -79,7 +79,7 @@ class _RootApplicationState extends State<RootApplication> with WidgetsBindingOb
       theme: ThemeData(
         useMaterial3: true,
         dividerTheme: const DividerThemeData(
-          thickness: 0.05,
+          thickness: 0.15,
           space: 0.05,
           color: Colors.black,
         ),
@@ -91,7 +91,7 @@ class _RootApplicationState extends State<RootApplication> with WidgetsBindingOb
         useMaterial3: true,
         brightness: Brightness.dark,
         dividerTheme: const DividerThemeData(
-          thickness: 0.05,
+          thickness: 0.15,
           space: 0.05,
           color: Colors.white,
         ),
